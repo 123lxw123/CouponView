@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--优惠券自定义属性-->
+    <declare-styleable name="CouponView">
+        <attr name="couponRadiusSize" format="dimension" />
+        <attr name="couponCircleWidthSise" format="dimension" />
+        <attr name="couponBackgroundRadiusSize" format="dimension" />
+        <attr name="couponMarginSpace" format="dimension" />
+        <attr name="couponBackgroundColor" format="color" />
+        <attr name="couponSelectBackgroundColor" format="color" />
+        <attr name="couponTextColor" format="color" />
+        <attr name="couponCircleColor" format="color" />
+        <attr name="couponTextSize" format="dimension" />
+        <attr name="couponText" format="string" />
+        <attr name="couponSelect" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lxw.customviewproject.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="vertical">
+
+            <com.lxw.customviewproject.CouponView
+                android:id="@+id/coupon1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                app:couponBackgroundColor="@color/color_343742"
+                app:couponCircleColor="@color/color_606064"
+                app:couponSelect="false"
+                app:couponSelectBackgroundColor="@color/color_E1442C"
+                app:couponText="@string/app_name" />
+
+            <com.lxw.customviewproject.CouponView
+                android:id="@+id/coupon2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                app:couponBackgroundColor="@color/color_343742"
+                app:couponCircleColor="@color/color_606064"
+                app:couponSelect="true"
+                app:couponSelectBackgroundColor="@color/color_E1442C"
+                app:couponText="@string/coupon_title1" />
+
+            <com.lxw.customviewproject.CouponView
+                android:id="@+id/coupon3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                app:couponBackgroundColor="@color/color_343742"
+                app:couponCircleColor="@color/color_606064"
+                app:couponSelect="true"
+                app:couponSelectBackgroundColor="@color/color_0C64C4"
+                app:couponText="@string/coupon_title2" />
+
+            <com.lxw.customviewproject.CouponView
+                android:id="@+id/coupon4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                app:couponBackgroundColor="@color/color_343742"
+                app:couponCircleColor="@color/color_606064"
+                app:couponSelect="true"
+                app:couponSelectBackgroundColor="@color/color_1BB003"
+                app:couponText="@string/coupon_title3" />
+
+            <com.lxw.customviewproject.CouponView
+                android:id="@+id/coupon5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:padding="15dp"
+                app:couponTextColor="@color/colorPrimaryDark"
+                app:couponBackgroundColor="@color/color_000000"
+                app:couponCircleColor="@color/color_FFFFFF"
+                app:couponSelect="true"
+                app:couponSelectBackgroundColor="@color/color_E1442C"
+                app:couponMarginSpace="30dp"
+                app:couponCircleWidthSise="5dp"
+                app:couponRadiusSize="15dp"
+                app:couponTextSize="20sp"
+                app:couponBackgroundRadiusSize="20dp"
+                app:couponText="@string/coupon_title3" />
+
+        </LinearLayout>
+</LinearLayout>
