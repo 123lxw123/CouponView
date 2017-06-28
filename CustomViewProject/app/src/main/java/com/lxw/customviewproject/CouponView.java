@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
@@ -50,6 +51,7 @@ public class CouponView extends View {
     protected Context context;// 上下文
     protected Paint paint;// 画笔
     protected Paint circlePaint;// 画笔
+    protected Path path;// 画勾选状态的勾
     protected Rect textBound;// 矩形区域
     protected OnClickListener listener;// 矩形区域
 
@@ -91,6 +93,7 @@ public class CouponView extends View {
         }
         // 用于测量文案的宽高
         paint = new Paint();
+        path = new Path();
         circlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         circlePaint.setStyle(Paint.Style.STROKE);
         circlePaint.setStrokeWidth(ValueUtil.dip2px(context, DEFAULT_COUPON_CIRCLE_WIDTH_SIZE));
@@ -169,11 +172,19 @@ public class CouponView extends View {
             int line1StartY = height / 2;
             int line1EndX = getPaddingLeft() + couponRadiusSize;
             int line1EndY = getPaddingTop() + (height - getPaddingTop() - getPaddingBottom() - couponRadiusSize * 2) / 2 + couponRadiusSize * 3 / 2;
-            canvas.drawLine(line1StartX , line1StartY, line1EndX, line1EndY, circlePaint);
+//            canvas.drawLine(line1StartX , line1StartY, line1EndX, line1EndY, circlePaint);
             //画第二根线
             int line2EndX = getPaddingLeft() + couponRadiusSize * 5 / 3;
             int line2EndY = getPaddingTop() + (height - getPaddingTop() - getPaddingBottom() - couponRadiusSize * 2) / 2 + couponRadiusSize * 2 / 3;
-            canvas.drawLine(line1EndX - ValueUtil.dip2px(context, DEFAULT_COUPON_CIRCLE_WIDTH_SIZE) / 2 , line1EndY + ValueUtil.dip2px(context, DEFAULT_COUPON_CIRCLE_WIDTH_SIZE) / 2, line2EndX, line2EndY, circlePaint);
+//            canvas.drawLine(line1EndX - ValueUtil.dip2px(context, DEFAULT_COUPON_CIRCLE_WIDTH_SIZE) / 2 , line1EndY + ValueUtil.dip2px(context, DEFAULT_COUPON_CIRCLE_WIDTH_SIZE) / 2, line2EndX, line2EndY, circlePaint);
+            //path的起始位置
+            path.moveTo(line1StartX, line1StartY);
+            //从起始位置划线到坐标
+            path.lineTo(line1EndX, line1EndY);
+            //从起始位置划线到坐标
+            path.lineTo(line2EndX, line2EndY);
+            //绘制path路径
+            canvas.drawPath(path, circlePaint);
         } else {
             // 绘制圆环
             circlePaint.setColor(couponCircleColor);
